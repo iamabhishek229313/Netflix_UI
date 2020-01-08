@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_ui/Screens/Labels.dart';
+import 'package:netflix_ui/Screens/MyList.dart';
+import 'package:netflix_ui/Screens/Popular.dart';
 import 'package:netflix_ui/models/movie_model.dart';
 
 class HomePage extends StatefulWidget {
@@ -30,7 +33,7 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
-        body: new Column(
+        body: new ListView(
           children: <Widget>[
             new Container(
               height: 220.0,
@@ -59,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       new Positioned(
-                        top:160.0,
+                        top: 160.0,
                         left: 15.0,
                         child: Container(
                           width: 300.0,
@@ -78,7 +81,16 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
               ),
-            )
+            ),
+            new SizedBox(
+              height: 20.0,
+            ),
+            Labels(),
+            MyList(),
+            new SizedBox(
+              height: 20.0,
+            ),
+            PopularList()
           ],
         ));
   }
